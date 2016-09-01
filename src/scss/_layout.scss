@@ -1,0 +1,22 @@
+.background-image {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	height: 100vh;
+	width: 100vw;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0;
+
+	@include filter(blur(40px));
+	@include transition(all 0.25s ease-in);
+}
+
+main {
+	@include shift(3);
+	@include span-columns(6);
+	position: absolute;
+	z-index: 10;
+}

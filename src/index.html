@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Selecta</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=500, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="background-image"></div>
+	<main>
+
+		<h1>Selecta</h1>
+
+		<form>
+			<h3>Choose your DJ:</h2>
+			<label>
+				DJ Druskee
+				<input class="dj-pool" type="checkbox" name="" value="druskee">
+			</label>
+			<label>
+				DJ Drewbacca
+				<input class="dj-pool" type="checkbox" name="" value="drewbacca">
+			</label>
+			<label>
+				DJ BK
+				<input class="dj-pool" type="checkbox" name="" value="bk">
+			</label>
+
+			<br>
+			<button type="submit">Run it!</button>
+		</form>
+
+		<br>
+
+		<div class="audio-player">
+			<div class="track--title"></div>
+			<div class="track--user"></div>
+
+			<div class="player-controls">
+				<button class="previous">Previous</button>
+				<button class="play-pause">Play</button>
+				<button class="next">Next</button>
+			</div>
+		</div>
+		
+		
+
+	</main>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+	<script src="scripts/tracks.js"></script>
+	<script src="scripts/selecta.js"></script>
+</body>
+</html>
