@@ -84,7 +84,7 @@ function makePlaylist(e) {
 	// get track details
 	finalPlaylist.forEach(pushTrackDetails);
 	function pushTrackDetails(trackID) {
-		var url = 'http://api.soundcloud.com/tracks/' + trackID + '?client_id=a6fd7031f106d30cca0acc1b77431c13';
+		var url = 'https://api.soundcloud.com/tracks/' + trackID + '?client_id=a6fd7031f106d30cca0acc1b77431c13';
 		$.getJSON(url, compileTrackDetails)
 		.fail(function() { console.log('getjson error'); });
 	}
