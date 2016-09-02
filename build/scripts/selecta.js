@@ -98,6 +98,7 @@ function makePlaylist(e) {
 
 	console.log('trackDetails', trackDetails);
 	console.log('trackURLs', trackURLs);
+	form.classList.add('hide');
 
 	// wait a bit before playing the first track
 	// (the player tries to load before
