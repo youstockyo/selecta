@@ -1,0 +1,79 @@
+body {
+	background: #232526;
+	background: -webkit-linear-gradient(to left, #232526 , #414345);
+	background: linear-gradient(to left, #232526 , #414345);
+}
+
+.background-image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0;
+
+	@include filter(blur(40px));
+	@include transition(opacity 0.75s ease-in, background-image 0.75s ease-in);
+
+	&.active {
+		opacity: 0.75;
+	}
+}
+
+.track--info {
+	@include transition(all 1.5s ease-in);
+
+	&.hide {
+		opacity: 0;
+	}
+	&.show {
+		opacity: 1;
+	}
+}
+
+.track--title {
+	background: rgba(211, 131, 18, 0.82); /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82)); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	        
+	@include pad(15px 25px 15px 15px);
+
+	font-family: 'Oswald';
+	font-size: 32px;
+	text-transform: uppercase;
+}
+
+.track--user {
+	background: rgba(211, 131, 18, 0.82); /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82)); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	@include pad(15px 25px 15px 35px);
+
+	font-family: 'Open Sans';
+	font-weight: 400;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+
+.track--art {
+	width: 325px;
+	height: 325px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	@include transition(background-image 1s ease, opacity 0.5s ease);
+}
+
+.player-controls {
+	font-size: 65px;
+	color: #222;
+}
+
+.previous, .next, .play-pause {
+	@include transition(all 0.4s ease);
+
+		&:hover {
+			text-shadow: 0 0 15px rgba(255,255,255,0.65);
+	}
+
+}
+

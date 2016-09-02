@@ -13,7 +13,7 @@ SC.initialize({
 
 // Structure
 //---------------------------
-var bgContainer = document.querySelector('.background-image');
+var bgContainer     = document.querySelector('.background-image');
 var form            = document.querySelector('form');
 var genreGroup      = document.querySelectorAll('input[name=genre-group]');
 var djPool          = document.querySelectorAll('.dj-pool');
@@ -23,6 +23,8 @@ var previous        = document.querySelector('.previous');
 var audioPlayer     = document.querySelector('.audio-player');
 var trackTitle      = document.querySelector('.track--title');
 var trackUser       = document.querySelector('.track--user');
+var trackArt        = document.querySelector('.track--art');
+var trackInfo = document.querySelector('.track--info');
 
 
 // Events
@@ -112,17 +114,17 @@ function initialPlay() {
 	audio.play();
 	console.log('trackIndex', trackIndex);
 
-	// add playing class, change copy to 'pause'
+	// add playing class, change icon to 'pause'
 	playPauseButton.classList.add('playing');
-	playPauseButton.innerHTML = 'Pause';
+	playPauseButton.classList.add('fa-pause');
 
-	// audioPlayer.style.opacity = '1';
 	audioPlayer.classList.add('active');
-	bgContainer.style.opacity = '0.8';
+	bgContainer.classList.add('active');
 	showCurrentTrackDetails();
 }
 
 // Use playNextTrack when current track is finished playing
+// or when the Next button is clicked
 function playNextTrack() {
 	var trackCount = trackURLs.length;
 
@@ -133,14 +135,16 @@ function playNextTrack() {
 		audio.load();
 		audio.play();
 		playPauseButton.classList.add('playing');
-		playPauseButton.innerHTML = 'Pause';
+		playPauseButton.classList.remove('fa-play');
+		playPauseButton.classList.add('fa-pause');
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
 	} else {
 		audio.pause();
 		playPauseButton.classList.remove('playing');
-		playPauseButton.innerHTML = 'Play';
+		playPauseButton.classList.remove('fa-pause');
+		playPauseButton.classList.add('fa-play');
 		trackIndex = 0;
 		audio.setAttribute('src', trackURLs[trackIndex]);
 		audio.load();
@@ -160,14 +164,16 @@ function playLastTrack() {
 		audio.load();
 		audio.play();
 		playPauseButton.classList.add('playing');
-		playPauseButton.innerHTML = 'Pause';
+		playPauseButton.classList.remove('fa-play');
+		playPauseButton.classList.add('fa-pause');
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
 	} else {
 		audio.pause();
 		playPauseButton.classList.remove('playing');
-		playPauseButton.innerHTML = 'Play';
+		playPauseButton.classList.remove('fa-pause');
+		playPauseButton.classList.add('fa-play');
 		trackIndex = 0;
 		audio.setAttribute('src', trackURLs[trackIndex]);
 		audio.load();
@@ -176,6 +182,7 @@ function playLastTrack() {
 		showCurrentTrackDetails();
 	}
 }
+
 
 // Error handling
 // If a track can't be played, skip to the next one
@@ -187,7 +194,8 @@ function skipTrack() {
 	audio.load();
 	audio.play();
 	playPauseButton.classList.add('playing');
-	playPauseButton.innerHTML = 'Pause';
+	playPauseButton.classList.remove('fa-play');
+	playPauseButton.classList.add('fa-pause');
 }
 
 
@@ -197,14 +205,16 @@ function togglePlayPause(e) {
 	// if playing, pause the player on click
 	if (playPauseButton.classList.contains('playing')) {
 		audio.pause();
-		playPauseButton.innerHTML = 'Play';
-		console.log('pausing');
 		playPauseButton.classList.remove('playing');
+		playPauseButton.classList.remove('fa-pause');
+		playPauseButton.classList.add('fa-play');
+		console.log('pausing');
 	} else {
 		audio.play();
-		playPauseButton.innerHTML = 'Pause';
-		console.log('playing');
 		playPauseButton.classList.add('playing');
+		playPauseButton.classList.remove('fa-play');
+		playPauseButton.classList.add('fa-pause');
+		console.log('playing');
 	}
 }
 
@@ -213,15 +223,34 @@ function togglePlayPause(e) {
 //---------------------------
 function showCurrentTrackDetails() {
 
-	// display track artwork (grab the bigger size for better quality)
-	var artwork = trackDetails[trackIndex].artwork_url;
-	var newArtwork = artwork.replace(/-large/i, '-t500x500');
-	audioPlayer.style.backgroundImage = 'url("' + newArtwork + '")';
-	bgContainer.style.backgroundImage = 'url("' + newArtwork + '")';
+	// fade in/out track info
+	if (trackIndex > 0) {
+		trackInfo.classList.remove('show');
+		trackInfo.classList.add('hide');
+		setTimeout( function() {
+			trackTitle.innerHTML = trackDetails[trackIndex].title;
+			trackUser.innerHTML = trackDetails[trackIndex].user.username;
+			trackInfo.classList.remove('hide');
+			trackInfo.classList.add('show');
+		}, 500);
+	} else {
+		trackTitle.innerHTML = trackDetails[trackIndex].title;
+		trackUser.innerHTML = trackDetails[trackIndex].user.username;
+	}
+	
 
-	// display track title & artist/user
-	trackTitle.innerHTML = trackDetails[trackIndex].title;
-	trackUser.innerHTML = trackDetails[trackIndex].user.username;
+	// display track artwork (grab the bigger size for better quality)
+	if (trackDetails[trackIndex].artwork_url !== null) {
+		var artwork = trackDetails[trackIndex].artwork_url;
+		var newArtwork = artwork.replace(/-large/i, '-t500x500');
+		trackArt.style.backgroundImage = 'url("' + newArtwork + '")';
+		bgContainer.style.backgroundImage = 'url("' + newArtwork + '")';
+	} else {
+		trackArt.style.backgroundImage = '';
+		bgContainer.style.backgroundImage = '';
+		trackArt.style.backgroundColor = '#333';
+		bgContainer.style.backgroundColor = '#333';
+	}
 
 }
 

@@ -7,15 +7,17 @@
 	<meta name="viewport" content="width=500, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+	<script src="https://use.fontawesome.com/89ab460be3.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<div class="background-image"></div>
+	
 	<main>
 
-		<h1>Selecta</h1>
-
 		<form>
+			<h1>Selecta</h1>
+
 			<h3>Choose your DJ:</h2>
 			<label>
 				DJ Druskee
@@ -37,19 +39,25 @@
 		<br>
 
 		<div class="audio-player">
-			<div class="track--title"></div>
-			<div class="track--user"></div>
+			<div class="track--info">
+				<p class="track--title"></p>
+				<br>
+				<p class="track--user"></p>
+			</div>
+
+			<div class="track--art"></div>
 
 			<div class="player-controls">
-				<button class="previous">Previous</button>
-				<button class="play-pause">Play</button>
-				<button class="next">Next</button>
+				<i class="previous fa fa-step-backward" aria-hidden="true"></i>
+				<i class="play-pause fa" aria-hidden="true"></i>
+				<i class="next fa fa-step-forward" aria-hidden="true"></i>
 			</div>
 		</div>
 		
 		
 
 	</main>
+	<div class="background-image"></div>
 	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

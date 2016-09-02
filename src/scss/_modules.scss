@@ -1,14 +1,19 @@
 .audio-player {
-	@include span-columns(12);
-	height: 500px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	height: 450px;
+	border-radius: 8px;
 	opacity: 0;
+	background-color: #fff;
 
 	@include transition(background-image 1s ease, opacity 0.5s ease);
 
 	&.active {
 		opacity: 1;
+		background-color: rgba(255,255,255,0.3);
+	}
+}
+
+.player-controls {
+	&:hover {
+		cursor: pointer;
 	}
 }
