@@ -1,19 +1,44 @@
+/* DJ SELECTION 
+---------------------------*/
+input[type=checkbox] {
+	display: none;
+}
+
+label {
+	display: inline-block;
+}
+
+/* AUDIO PLAYER 
+---------------------------*/
 .audio-player {
 	height: 450px;
 	border-radius: 8px;
 	opacity: 0;
+	visibility: hidden;
 	background-color: #fff;
 
 	@include transition(background-image 1s ease, opacity 0.5s ease);
 
 	&.active {
 		opacity: 1;
+		visibility: visible;
 		background-color: rgba(255,255,255,0.3);
 	}
 }
 
 .player-controls {
+	font-size: 60px;
+	color: #222;
+
 	&:hover {
 		cursor: pointer;
+	}
+}
+
+.previous, .next, .play-pause {
+	@include transition(all 0.4s ease);
+
+	&:hover {
+		text-shadow: 0 0 15px rgba(255,255,255,0.65);
 	}
 }
