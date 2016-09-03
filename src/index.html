@@ -8,31 +8,35 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<script src="https://use.fontawesome.com/89ab460be3.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,700|Permanent+Marker" rel="stylesheet">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 	
 	<main>
 
-		<h1>Selecta</h1>
+		<h1>Selecta!</h1>
 
 		<form>
+		<div class="dj--pics">
+			<input class="dj-pool" type="checkbox" name="druskee" id="druskee" value="druskee">
+			<label class="label--druskee" for="druskee"></label>
 
-			<h3>Choose your DJ(s):</h2>
-			<label>
-				DJ Druskee
-				<input class="dj-pool" type="checkbox" name="" value="druskee">
-			</label>
-			<label>
-				DJ Drewbacca
-				<input class="dj-pool" type="checkbox" name="" value="drewbacca">
-			</label>
-			<label>
-				DJ BK
-				<input class="dj-pool" type="checkbox" name="" value="bk">
-			</label>
+			<input class="dj-pool" type="checkbox" name="drewbacca" id="drewbacca" value="drewbacca">
+			<label class="label--drewbacca" for="drewbacca"></label>
 
+			<input class="dj-pool" type="checkbox" name="bk" id="bk" value="bk">
+			<label class="label--bk" for="bk"></label>
+		</div>
+		<div class="dj--names">
+			<p>Druskee</p>
+			<p>Drewbacca</p>
+			<p>S. Hawkings</p>
+		</div>
+
+
+			<h3>Choose your DJ(s)</h2>
+				
 			<br>
 			<button type="submit">Run it!</button>
 		</form>
@@ -63,6 +67,7 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 	<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 	<script src="scripts/tracks.js"></script>
 	<script src="scripts/selecta.js"></script>

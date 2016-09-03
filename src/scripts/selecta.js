@@ -4,6 +4,9 @@ var audio = new Audio();
 var trackDetails = [];
 var trackURLs = [];
 var trackIndex = 0;
+var wavyPool;
+
+var fbRef = new Firebase('https://selecta-574e0.firebaseio.com/');
 
 SC.initialize({
 	client_id: 'a6fd7031f106d30cca0acc1b77431c13'
@@ -15,6 +18,7 @@ SC.initialize({
 //---------------------------
 var bgContainer     = document.querySelector('.background-image');
 var form            = document.querySelector('form');
+var submitButton    = document.querySelector('form button');
 var genreGroup      = document.querySelectorAll('input[name=genre-group]');
 var djPool          = document.querySelectorAll('.dj-pool');
 var playPauseButton = document.querySelector('.play-pause');
@@ -24,12 +28,13 @@ var audioPlayer     = document.querySelector('.audio-player');
 var trackTitle      = document.querySelector('.track--title');
 var trackUser       = document.querySelector('.track--user');
 var trackArt        = document.querySelector('.track--art');
-var trackInfo = document.querySelector('.track--info');
+var trackInfo       = document.querySelector('.track--info');
 
 
 // Events
 //---------------------------
 form.addEventListener('submit', makePlaylist);
+form.addEventListener('click', showSubmit);
 audio.addEventListener('ended', playNextTrack);
 audio.addEventListener('error', skipTrack);
 next.addEventListener('click', playNextTrack);
@@ -37,8 +42,23 @@ previous.addEventListener('click', playLastTrack);
 playPauseButton.addEventListener('click', togglePlayPause);
 
 
+// TODO: Firebase data
+//---------------------------
+
+
 // Playlist Construction
 //---------------------------
+function showSubmit(e) {
+	var djIsChecked     = document.querySelectorAll('input[type="checkbox"]:checked');
+	
+	if (djIsChecked.length >= 1) {
+		submitButton.classList.add('active');
+	} else {
+		submitButton.classList.remove('active');
+	}
+}
+
+
 function makePlaylist(e) {
 	e.preventDefault();
 
@@ -47,7 +67,7 @@ function makePlaylist(e) {
 	var finalPlaylist;
 
 	// Safari does not allow forEach method on a nodeList (djPool),
-	// convert djPool to an array
+	// so convert djPool to an array
 	djPoolArray = [].slice.call(djPool);
 
 	// Get selected DJs, push the selection(s)
