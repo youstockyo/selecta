@@ -423,6 +423,9 @@ body {
   height: 100vh;
   width: 100vw; }
 
+main {
+  overflow: hidden; }
+
 main h1 {
   text-align: center;
   margin: 25px 0; }
@@ -483,7 +486,7 @@ form button {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 25;
-  margin-top: 10px; }
+  margin-top: 20px; }
 
 /* AUDIO PLAYER
 ---------------------------*/
@@ -495,7 +498,7 @@ form button {
   width: 65.88078%;
   margin-left: 17.05961%;
   z-index: 20;
-  margin-top: -280px; }
+  margin-top: -295px; }
   .audio-player:last-child {
     margin-right: 0; }
 
@@ -555,6 +558,8 @@ label {
   .previous:hover, .next:hover, .play-pause:hover {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.65); }
 
+/* PLAYLIST MENU
+---------------------------*/
 body {
   background: #232526;
   background: -webkit-linear-gradient(to left, #232526, #414345);
@@ -595,13 +600,13 @@ label {
             transform: scale(1.1); }
 
 .label--druskee {
-  background: url("/images/druskee.jpg") no-repeat; }
+  background: url("../images/druskee.jpg") no-repeat; }
 
 .label--drewbacca {
-  background: url("/images/drewbacca.jpg") no-repeat; }
+  background: url("../images/drewbacca.jpg") no-repeat; }
 
 .label--bk {
-  background: url("/images/bk.jpg") no-repeat;
+  background: url("../images/bk.jpg") no-repeat;
   margin-right: 0; }
 
 input[type=checkbox]:checked + label {

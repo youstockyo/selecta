@@ -10,6 +10,10 @@ body {
 	width: 100vw;
 }
 
+main {
+	overflow: hidden;
+}
+
 main h1 {
 	text-align: center;
 	margin: 25px 0;
@@ -55,7 +59,7 @@ form button {
 	left: 50%;
 	@include transform(translateX(-50%));
 	z-index: 25;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 
@@ -66,7 +70,7 @@ form button {
 	@include span-columns(8 of 12);
 	@include shift(2);
 	z-index: 20;
-	margin-top: -280px;
+	margin-top: -295px;
 }
 
 .track--info, .track--user, .track--art, .player-controls {

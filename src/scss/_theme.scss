@@ -45,16 +45,16 @@ label {
 }
 
 .label--druskee {
-	background: url("/images/druskee.jpg") no-repeat;
+	background: url("../images/druskee.jpg") no-repeat;
 
 }
 
 .label--drewbacca {
-	background: url("/images/drewbacca.jpg") no-repeat;
+	background: url("../images/drewbacca.jpg") no-repeat;
 }
 
 .label--bk {
-	background: url("/images/bk.jpg") no-repeat;
+	background: url("../images/bk.jpg") no-repeat;
 	@include omega();
 }
 
