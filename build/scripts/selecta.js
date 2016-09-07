@@ -4,7 +4,7 @@ var audio = new Audio();
 var trackDetails = [];
 var trackURLs = [];
 var trackIndex = 0;
-var wavyPool;
+var fbTracks = [];
 
 var fbRef = new Firebase('https://selecta-574e0.firebaseio.com/');
 
@@ -29,9 +29,9 @@ var trackTitle      = document.querySelector('.track--title');
 var trackUser       = document.querySelector('.track--user');
 var trackArt        = document.querySelector('.track--art');
 var trackInfo       = document.querySelector('.track--info');
-var upNext = document.querySelector('.up-next');
-var upNextArt = document.querySelector('.up-next--art');
-var upNextTitle = document.querySelector('.up-next--title');
+var upNext          = document.querySelector('.up-next');
+var upNextArt       = document.querySelector('.up-next--art');
+var upNextTitle     = document.querySelector('.up-next--title');
 
 
 // Events
@@ -47,12 +47,14 @@ playPauseButton.addEventListener('click', togglePlayPause);
 
 // TODO: Firebase data
 //---------------------------
-
+fbRef.on('value', function(snapshot) {
+	fbTracks = snapshot.val();
+});
 
 // Playlist Construction
 //---------------------------
 function showSubmit(e) {
-	var djIsChecked     = document.querySelectorAll('input[type="checkbox"]:checked');
+	var djIsChecked = document.querySelectorAll('input[type="checkbox"]:checked');
 	
 	if (djIsChecked.length >= 1) {
 		submitButton.classList.add('active');
@@ -88,7 +90,7 @@ function makePlaylist(e) {
 	// those tracks to the poolTracks array
 	djs.forEach(getPoolTracks);
 	function getPoolTracks(i) {
-		poolTracks.push(wavy[i]);
+		poolTracks.push(fbTracks.wavy[i]);
 
 		// Flatten poolTracks as it is initially
 		// an array of arrays
