@@ -33,28 +33,32 @@ h1 {
 label {
 	border-radius: 50%;
 	background-size: cover;
-	background-position: center center;
+	background-position: center;
+	background-repeat: no-repeat;
 	cursor: pointer;
-	// border: none;
 
 	@include transition(transform 0.5s ease);
 	&:hover {
 		transform: scale(1.1);
 	}
 
+	@include media($medium) {
+		// border-radius: 2%;
+	}
+
 }
 
 .label--druskee {
-	background: url("../images/druskee.jpg") no-repeat;
+	background-image: url("../images/druskee.jpg");
 
 }
 
 .label--drewbacca {
-	background: url("../images/drewbacca.jpg") no-repeat;
+	background-image: url("../images/drewbacca.jpg");
 }
 
 .label--bk {
-	background: url("../images/bk.jpg") no-repeat;
+	background-image: url("../images/bk.jpg");
 	@include omega();
 }
 
@@ -152,4 +156,42 @@ form button {
 	background-repeat: no-repeat;
 	background-position: center;
 	@include transition(background-image 1s ease, opacity 0.5s ease);
+}
+
+.up-next {
+	font-family: 'Open Sans';
+	text-transform: uppercase;
+	font-size: 16px;
+	opacity: 0;
+
+	@include transition(all 1.5s ease-in);
+
+	&.hide {
+		opacity: 0;
+	}
+
+	&.show {
+		opacity: 1;
+	}
+}
+
+.up-next--art {
+	width: 75px;
+	height: 75px;
+}
+
+.up-next ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: table-row;
+}
+
+.up-next li {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.up-next p {
+	font-style: italic;
 }

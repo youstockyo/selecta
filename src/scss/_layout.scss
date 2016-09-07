@@ -24,6 +24,7 @@ main h1 {
 form {
 	@include span-columns(6);
 	@include shift(3);
+	@include omega();
 	@include transition(all 0.75s ease);
 
 	&.hide {
@@ -32,9 +33,22 @@ form {
 	}
 }
 
-label {
+.dj {
 	@include span-columns(2 of 6);
-	height: 160px;
+}
+
+label {
+	// @include span-columns(2 of 6);
+	height: auto;
+	width: 100%;
+	padding-top: 100%;
+	
+
+	// @include media($medium) {
+	// 	@include span-columns(2 of 6);
+	// 	@include shift(2);
+	// 	height: 160px;
+	// }
 }
 
 .dj--pics {
@@ -73,7 +87,7 @@ form button {
 	margin-top: -295px;
 }
 
-.track--info, .track--user, .track--art, .player-controls {
+.track--info, .track--user, .track--art, .player-controls, .up-next {
 	position: absolute;
 }
 
@@ -96,4 +110,18 @@ form button {
 .track--info {
 	top: 10%;
 	z-index: 21;
+}
+
+.up-next {
+	bottom: 25%;
+	padding-left: 15px;
+}
+
+.up-next p {
+	padding-bottom: 5px;
+}
+
+.up-next--title {
+	padding-left: 15px;
+	max-width: 225px;
 }

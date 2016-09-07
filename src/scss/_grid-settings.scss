@@ -4,3 +4,6 @@
 $visual-grid: false !global;
 $visual-grid-color: #d5eefb !global;
 $visual-grid-index: front !global;
+
+// Breakpoints
+$medium: new-breakpoint(max-width 1080px 6);

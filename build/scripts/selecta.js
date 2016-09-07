@@ -29,6 +29,9 @@ var trackTitle      = document.querySelector('.track--title');
 var trackUser       = document.querySelector('.track--user');
 var trackArt        = document.querySelector('.track--art');
 var trackInfo       = document.querySelector('.track--info');
+var upNext = document.querySelector('.up-next');
+var upNextArt = document.querySelector('.up-next--art');
+var upNextTitle = document.querySelector('.up-next--title');
 
 
 // Events
@@ -142,6 +145,7 @@ function initialPlay() {
 	audioPlayer.classList.add('active');
 	bgContainer.classList.add('active');
 	showCurrentTrackDetails();
+	showNextTrackDetails();
 }
 
 // Use playNextTrack when current track is finished playing
@@ -161,6 +165,7 @@ function playNextTrack() {
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
+		showNextTrackDetails();
 	} else {
 		audio.pause();
 		playPauseButton.classList.remove('playing');
@@ -172,6 +177,7 @@ function playNextTrack() {
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
+		showNextTrackDetails();
 	}
 	
 }
@@ -190,6 +196,7 @@ function playLastTrack() {
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
+		showNextTrackDetails();
 	} else {
 		audio.pause();
 		playPauseButton.classList.remove('playing');
@@ -201,6 +208,7 @@ function playLastTrack() {
 		console.log('trackIndex', trackIndex, 'trackCount', trackCount);
 
 		showCurrentTrackDetails();
+		showNextTrackDetails();
 	}
 }
 
@@ -275,10 +283,32 @@ function showCurrentTrackDetails() {
 
 }
 
+function showNextTrackDetails() {
+	var trackCount = trackURLs.length;
 
-// Playlist Menu
-//---------------------------
-
+	if ((trackIndex + 1) < trackCount) {
+		// show next track info
+		upNext.classList.add('hide');
+		upNext.classList.remove('show');
+		// update next track details (with a delay for transition timing)
+		setTimeout(function() {
+			upNextTitle.innerHTML = trackDetails[trackIndex + 1].title;
+			// update next track art thumbnail (if available)
+			if (trackDetails[trackIndex + 1].artwork_url !== null) {
+				var artwork = trackDetails[trackIndex + 1].artwork_url;
+				upNextArt.style.backgroundImage = 'url("' + artwork + '")';
+			} else {
+				upNextArt.style.backgroundImage = '';
+				upNextArt.style.backgroundColor = '#333';
+			}
+			upNext.classList.remove('hide');
+			upNext.classList.add('show');
+		}, 1500);
+	} else {
+		upNext.classList.add('hide');
+	}
+	
+}
 
 
 // Helper functions
@@ -287,4 +317,3 @@ function showCurrentTrackDetails() {
 function shuffle() {
 	return 0.5 - Math.random();
 }
-

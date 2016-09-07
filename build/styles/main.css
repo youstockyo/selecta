@@ -438,6 +438,7 @@ form {
   margin-right: 2.35765%;
   width: 48.82117%;
   margin-left: 25.58941%;
+  margin-right: 0;
   -webkit-transition: all 0.75s ease;
   transition: all 0.75s ease; }
   form:last-child {
@@ -446,14 +447,18 @@ form {
     visibility: hidden;
     opacity: 0; }
 
-label {
+.dj {
   float: left;
   display: block;
   margin-right: 4.82916%;
-  width: 30.11389%;
-  height: 160px; }
-  label:last-child {
+  width: 30.11389%; }
+  .dj:last-child {
     margin-right: 0; }
+
+label {
+  height: auto;
+  width: 100%;
+  padding-top: 100%; }
 
 .dj--pics {
   display: block; }
@@ -502,7 +507,7 @@ form button {
   .audio-player:last-child {
     margin-right: 0; }
 
-.track--info, .track--user, .track--art, .player-controls {
+.track--info, .track--user, .track--art, .player-controls, .up-next {
   position: absolute; }
 
 .player-controls {
@@ -522,6 +527,17 @@ form button {
 .track--info {
   top: 10%;
   z-index: 21; }
+
+.up-next {
+  bottom: 25%;
+  padding-left: 15px; }
+
+.up-next p {
+  padding-bottom: 5px; }
+
+.up-next--title {
+  padding-left: 15px;
+  max-width: 225px; }
 
 /* DJ SELECTION 
 ---------------------------*/
@@ -589,7 +605,8 @@ h1 {
 label {
   border-radius: 50%;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
@@ -600,13 +617,13 @@ label {
             transform: scale(1.1); }
 
 .label--druskee {
-  background: url("../images/druskee.jpg") no-repeat; }
+  background-image: url("../images/druskee.jpg"); }
 
 .label--drewbacca {
-  background: url("../images/drewbacca.jpg") no-repeat; }
+  background-image: url("../images/drewbacca.jpg"); }
 
 .label--bk {
-  background: url("../images/bk.jpg") no-repeat;
+  background-image: url("../images/bk.jpg");
   margin-right: 0; }
 
 input[type=checkbox]:checked + label {
@@ -689,3 +706,32 @@ form button {
   background-position: center;
   -webkit-transition: background-image 1s ease, opacity 0.5s ease;
   transition: background-image 1s ease, opacity 0.5s ease; }
+
+.up-next {
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  font-size: 16px;
+  opacity: 0;
+  -webkit-transition: all 1.5s ease-in;
+  transition: all 1.5s ease-in; }
+  .up-next.hide {
+    opacity: 0; }
+  .up-next.show {
+    opacity: 1; }
+
+.up-next--art {
+  width: 75px;
+  height: 75px; }
+
+.up-next ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: table-row; }
+
+.up-next li {
+  display: table-cell;
+  vertical-align: middle; }
+
+.up-next p {
+  font-style: italic; }

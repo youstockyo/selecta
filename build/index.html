@@ -13,21 +13,27 @@
 </head>
 <body>
 	
-	<div class="container">
 	<main>
 
 		<h1>Selecta!</h1>
 
 		<form>
 			<div class="dj--pics">
-				<input class="dj-pool" type="checkbox" name="druskee" id="druskee" value="druskee">
-				<label class="label--druskee" for="druskee"></label>
-
-				<input class="dj-pool" type="checkbox" name="drewbacca" id="drewbacca" value="drewbacca">
-				<label class="label--drewbacca" for="drewbacca"></label>
-
-				<input class="dj-pool" type="checkbox" name="bk" id="bk" value="bk">
-				<label class="label--bk" for="bk"></label>
+				<div class="dj">
+					<input class="dj-pool" type="checkbox" name="druskee" id="druskee" value="druskee">
+					<label class="label--druskee" for="druskee"></label>
+				</div>
+				
+				<div class="dj">
+					<input class="dj-pool" type="checkbox" name="drewbacca" id="drewbacca" value="drewbacca">
+					<label class="label--drewbacca" for="drewbacca"></label>
+				</div>
+				
+				<div class="dj">
+					<input class="dj-pool" type="checkbox" name="bk" id="bk" value="bk">
+					<label class="label--bk" for="bk"></label>
+				</div>
+				
 			</div>
 			<div class="dj--names">
 				<p>Druskee</p>
@@ -35,7 +41,7 @@
 				<p>S. Hawkings</p>
 			</div>
 			<h3>Choose your DJ(s)</h2>
-			<button type="submit">Run it!</button>
+			<button type="submit">Make my Mixtape!</button>
 		</form>
 
 		<div class="audio-player">
@@ -47,6 +53,14 @@
 
 			<div class="track--art"></div>
 
+			<div class="up-next">
+				<p>Up Next:</p>
+				<ul>
+					<li class="up-next--art"></li>
+					<li class="up-next--title"></li>
+				</ul>
+			</div>
+
 			<div class="player-controls">
 				<i class="previous fa fa-step-backward" aria-hidden="true"></i>
 				<i class="play-pause fa" aria-hidden="true"></i>
@@ -57,12 +71,10 @@
 	</main>
 
 	<div class="background-image"></div>
-	</div>
 	
 	
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 	<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 	<script src="scripts/tracks.js"></script>
