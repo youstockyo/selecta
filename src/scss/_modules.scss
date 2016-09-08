@@ -11,7 +11,6 @@ label {
 /* AUDIO PLAYER 
 ---------------------------*/
 .audio-player {
-	height: 450px;
 	border-radius: 8px;
 	opacity: 0;
 	visibility: hidden;
@@ -24,10 +23,16 @@ label {
 		visibility: visible;
 		background-color: rgba(255,255,255,0.3);
 	}
+
+
+	@include media($medium) {
+		// height: 550px;
+	}
 }
 
 .player-controls {
-	font-size: 60px;
+	font-size: 75px;
+	text-align: center;
 	color: #222;
 
 	&:hover {
@@ -42,7 +47,3 @@ label {
 		text-shadow: 0 0 15px rgba(255,255,255,0.65);
 	}
 }
-
-
-/* PLAYLIST MENU
----------------------------*/

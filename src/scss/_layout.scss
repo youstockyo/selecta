@@ -1,6 +1,7 @@
 body {
 	height: 100vh;
 	width: 100vw;
+	overflow: hidden;
 }
 .background-image {
 	position: fixed;
@@ -8,10 +9,6 @@ body {
 	z-index: -100;
 	height: 100vh;
 	width: 100vw;
-}
-
-main {
-	overflow: hidden;
 }
 
 main h1 {
@@ -38,17 +35,9 @@ form {
 }
 
 label {
-	// @include span-columns(2 of 6);
 	height: auto;
 	width: 100%;
 	padding-top: 100%;
-	
-
-	// @include media($medium) {
-	// 	@include span-columns(2 of 6);
-	// 	@include shift(2);
-	// 	height: 160px;
-	// }
 }
 
 .dj--pics {
@@ -80,11 +69,16 @@ form button {
 /* AUDIO PLAYER
 ---------------------------*/
 .audio-player {
+	height: 450px;
 	position: relative;
 	@include span-columns(8 of 12);
 	@include shift(2);
 	z-index: 20;
 	margin-top: -295px;
+
+	@include media($medium) {
+		height: 525px;
+	}
 }
 
 .track--info, .track--user, .track--art, .player-controls, .up-next {
@@ -92,13 +86,11 @@ form button {
 }
 
 .player-controls {
-	left: 50%;
-	@include transform(translateX(-50%));
+	width: 100%;
 	bottom: 3%;
 }
 
 .play-pause, .previous, .next {
-	font-size: 75px;
 	margin: 0 20px;
 }
 
@@ -115,6 +107,10 @@ form button {
 .up-next {
 	bottom: 25%;
 	padding-left: 15px;
+
+	@include media($medium) {
+		bottom: 20%;
+	}
 }
 
 .up-next p {
@@ -124,4 +120,8 @@ form button {
 .up-next--title {
 	padding-left: 15px;
 	max-width: 225px;
+
+	@include media($medium) {
+		max-width: 375px;
+	}
 }

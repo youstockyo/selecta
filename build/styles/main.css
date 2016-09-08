@@ -414,7 +414,8 @@ p {
 
 body {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow: hidden; }
 
 .background-image {
   position: fixed;
@@ -422,9 +423,6 @@ body {
   z-index: -100;
   height: 100vh;
   width: 100vw; }
-
-main {
-  overflow: hidden; }
 
 main h1 {
   text-align: center;
@@ -496,6 +494,7 @@ form button {
 /* AUDIO PLAYER
 ---------------------------*/
 .audio-player {
+  height: 450px;
   position: relative;
   float: left;
   display: block;
@@ -506,18 +505,18 @@ form button {
   margin-top: -295px; }
   .audio-player:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 960px) {
+    .audio-player {
+      height: 525px; } }
 
 .track--info, .track--user, .track--art, .player-controls, .up-next {
   position: absolute; }
 
 .player-controls {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  width: 100%;
   bottom: 3%; }
 
 .play-pause, .previous, .next {
-  font-size: 75px;
   margin: 0 20px; }
 
 .track--art {
@@ -531,6 +530,9 @@ form button {
 .up-next {
   bottom: 25%;
   padding-left: 15px; }
+  @media screen and (max-width: 960px) {
+    .up-next {
+      bottom: 20%; } }
 
 .up-next p {
   padding-bottom: 5px; }
@@ -538,6 +540,9 @@ form button {
 .up-next--title {
   padding-left: 15px;
   max-width: 225px; }
+  @media screen and (max-width: 960px) {
+    .up-next--title {
+      max-width: 375px; } }
 
 /* DJ SELECTION 
 ---------------------------*/
@@ -550,7 +555,6 @@ label {
 /* AUDIO PLAYER 
 ---------------------------*/
 .audio-player {
-  height: 450px;
   border-radius: 8px;
   opacity: 0;
   visibility: hidden;
@@ -563,7 +567,8 @@ label {
     background-color: rgba(255, 255, 255, 0.3); }
 
 .player-controls {
-  font-size: 60px;
+  font-size: 75px;
+  text-align: center;
   color: #222; }
   .player-controls:hover {
     cursor: pointer; }
@@ -574,8 +579,6 @@ label {
   .previous:hover, .next:hover, .play-pause:hover {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.65); }
 
-/* PLAYLIST MENU
----------------------------*/
 body {
   background: #232526;
   background: -webkit-linear-gradient(to left, #232526, #414345);
