@@ -109,6 +109,8 @@ form button {
 	background: -webkit-linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82));
 	background: linear-gradient(to left, rgba(211, 131, 18, 0.82) , rgba(168, 50, 121, 0.82));
 
+	box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+
 	&.active {
 		opacity: 1;
 		visibility: visible;

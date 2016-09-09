@@ -427,7 +427,7 @@ body {
 main h1 {
   text-align: center;
   margin: 25px 0; }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     main h1 {
       margin: 5px 0 10px 0; } }
 
@@ -456,7 +456,7 @@ form {
       margin-left: 17.47153%; }
       form:last-child {
         margin-right: 0; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     form {
       float: left;
       display: block;
@@ -539,7 +539,7 @@ form button {
       margin-left: 8.73576%; }
       .audio-player:last-child {
         margin-right: 0; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     .audio-player {
       float: left;
       display: block;
@@ -555,7 +555,7 @@ form button {
 .player-controls {
   width: 100%;
   bottom: 3%; }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     .player-controls {
       bottom: 12%; } }
 
@@ -565,7 +565,7 @@ form button {
 .track--art {
   top: 3%;
   right: 3%; }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     .track--art {
       top: 5%;
       left: 50%;
@@ -614,7 +614,7 @@ label {
     opacity: 1;
     visibility: visible;
     background-color: rgba(255, 255, 255, 0.3); }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 515px) {
       .audio-player.active {
         background-color: transparent; } }
 
@@ -642,7 +642,7 @@ h1 {
   color: #fff;
   font-size: 75px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     h1 {
       font-size: 64px; } }
 
@@ -698,7 +698,7 @@ input[type=checkbox]:checked + label {
   @media screen and (max-width: 960px) {
     .dj--names p {
       font-size: 20px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     .dj--names p {
       font-size: 16px; } }
 
@@ -726,13 +726,14 @@ form button {
   background: rgba(211, 131, 18, 0.82);
   background: -webkit-linear-gradient(to left, rgba(211, 131, 18, 0.82), rgba(168, 50, 121, 0.82));
   background: -webkit-linear-gradient(right, rgba(211, 131, 18, 0.82), rgba(168, 50, 121, 0.82));
-  background: linear-gradient(to left, rgba(211, 131, 18, 0.82), rgba(168, 50, 121, 0.82)); }
+  background: linear-gradient(to left, rgba(211, 131, 18, 0.82), rgba(168, 50, 121, 0.82));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45); }
   form button.active {
     opacity: 1;
     visibility: visible; }
   form button:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.65); }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 515px) {
     form button {
       font-size: 28px; } }
 
@@ -785,7 +786,7 @@ form button {
     opacity: 0; }
   .up-next.show {
     opacity: 1; }
-    @media screen and (max-width: 420px) {
+    @media screen and (max-width: 515px) {
       .up-next.show {
         opacity: 0; } }
 

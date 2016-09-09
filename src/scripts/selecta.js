@@ -32,6 +32,7 @@ var trackInfo       = document.querySelector('.track--info');
 var upNext          = document.querySelector('.up-next');
 var upNextArt       = document.querySelector('.up-next--art');
 var upNextTitle     = document.querySelector('.up-next--title');
+var logo            = document.querySelector('h1');
 
 
 // Events
@@ -41,15 +42,17 @@ form.addEventListener('click', showSubmit);
 audio.addEventListener('ended', playNextTrack);
 audio.addEventListener('error', skipTrack);
 next.addEventListener('click', playNextTrack);
+logo.addEventListener('click', newMixtape);
 previous.addEventListener('click', playLastTrack);
 playPauseButton.addEventListener('click', togglePlayPause);
 
 
-// TODO: Firebase data
+// Firebase data
 //---------------------------
 fbRef.on('value', function(snapshot) {
 	fbTracks = snapshot.val();
 });
+
 
 // Playlist Construction
 //---------------------------
@@ -131,6 +134,12 @@ function makePlaylist(e) {
 	setTimeout(initialPlay, 500);
 }
 
+function newMixtape(){
+	if (audioPlayer.classList.contains('active')) {
+		document.location.reload();
+	}
+}
+
 
 // Audio player
 //---------------------------
@@ -146,6 +155,7 @@ function initialPlay() {
 
 	audioPlayer.classList.add('active');
 	bgContainer.classList.add('active');
+	logo.style.cursor = 'pointer';
 	showCurrentTrackDetails();
 	showNextTrackDetails();
 }
