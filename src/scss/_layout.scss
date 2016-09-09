@@ -32,10 +32,24 @@ form {
 		visibility: hidden;
 		opacity: 0;
 	}
+
+	@include media($tablet) {
+		@include span-columns(4);
+		@include shift(1);
+	}
+
+	@include media($mobile) {
+		@include span-columns(3.5);
+		@include shift(0.25);
+	}
 }
 
 .dj {
 	@include span-columns(2 of 6);
+
+	@include media($mobile) {
+		// @include span-columns(2 of 4);
+	}
 }
 
 label {
@@ -85,7 +99,7 @@ form button {
 	}
 
 	@include media($tablet) {
-		margin-top: -250px;
+		margin-top: -265px;
 		@include span-columns(5);
 		@include shift(0.5);
 	}
