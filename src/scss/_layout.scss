@@ -14,6 +14,10 @@ body {
 main h1 {
 	text-align: center;
 	margin: 25px 0;
+
+	@include media($mobile) {
+		margin: 5px 0 10px 0;
+	}
 }
 
 /* DJ SELECTION 
@@ -71,13 +75,24 @@ form button {
 .audio-player {
 	height: 450px;
 	position: relative;
-	@include span-columns(8 of 12);
+	@include span-columns(8);
 	@include shift(2);
 	z-index: 20;
 	margin-top: -295px;
 
 	@include media($medium) {
 		height: 525px;
+	}
+
+	@include media($tablet) {
+		margin-top: -250px;
+		@include span-columns(5);
+		@include shift(0.5);
+	}
+
+	@include media($mobile) {
+		@include span-columns(4);
+		@include shift(0);
 	}
 }
 
@@ -88,6 +103,10 @@ form button {
 .player-controls {
 	width: 100%;
 	bottom: 3%;
+
+	@include media($mobile) {
+		bottom: 12%;
+	}
 }
 
 .play-pause, .previous, .next {
@@ -97,6 +116,13 @@ form button {
 .track--art {
 	top: 3%;
 	right: 3%;
+
+	@include media($mobile) {
+		top: 5%;
+		left: 50%;
+		right: 0;
+		transform: translateX(-50%);
+	}
 }
 
 .track--info {

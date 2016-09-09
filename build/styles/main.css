@@ -427,6 +427,9 @@ body {
 main h1 {
   text-align: center;
   margin: 25px 0; }
+  @media screen and (max-width: 420px) {
+    main h1 {
+      margin: 5px 0 10px 0; } }
 
 /* DJ SELECTION 
 ---------------------------*/
@@ -508,6 +511,25 @@ form button {
   @media screen and (max-width: 960px) {
     .audio-player {
       height: 525px; } }
+  @media screen and (max-width: 768px) {
+    .audio-player {
+      margin-top: -250px;
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 82.52847%;
+      margin-left: 8.73576%; }
+      .audio-player:last-child {
+        margin-right: 0; } }
+  @media screen and (max-width: 420px) {
+    .audio-player {
+      float: left;
+      display: block;
+      margin-right: 7.42297%;
+      width: 100%;
+      margin-left: 0%; }
+      .audio-player:last-child {
+        margin-right: 0; } }
 
 .track--info, .track--user, .track--art, .player-controls, .up-next {
   position: absolute; }
@@ -515,6 +537,9 @@ form button {
 .player-controls {
   width: 100%;
   bottom: 3%; }
+  @media screen and (max-width: 420px) {
+    .player-controls {
+      bottom: 12%; } }
 
 .play-pause, .previous, .next {
   margin: 0 20px; }
@@ -522,6 +547,13 @@ form button {
 .track--art {
   top: 3%;
   right: 3%; }
+  @media screen and (max-width: 420px) {
+    .track--art {
+      top: 5%;
+      left: 50%;
+      right: 0;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); } }
 
 .track--info {
   top: 10%;
@@ -558,13 +590,15 @@ label {
   border-radius: 8px;
   opacity: 0;
   visibility: hidden;
-  background-color: #fff;
   -webkit-transition: background-image 1s ease, opacity 0.5s ease;
   transition: background-image 1s ease, opacity 0.5s ease; }
   .audio-player.active {
     opacity: 1;
     visibility: visible;
     background-color: rgba(255, 255, 255, 0.3); }
+    @media screen and (max-width: 420px) {
+      .audio-player.active {
+        background-color: transparent; } }
 
 .player-controls {
   font-size: 75px;
@@ -590,6 +624,9 @@ h1 {
   color: #fff;
   font-size: 75px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); }
+  @media screen and (max-width: 420px) {
+    h1 {
+      font-size: 64px; } }
 
 .background-image {
   background-size: cover;
@@ -640,6 +677,9 @@ input[type=checkbox]:checked + label {
   text-align: center;
   text-transform: uppercase;
   color: #fff; }
+  @media screen and (max-width: 960px) {
+    .dj--names p {
+      font-size: 20px; } }
 
 form h3 {
   text-align: center;
@@ -721,6 +761,9 @@ form button {
     opacity: 0; }
   .up-next.show {
     opacity: 1; }
+    @media screen and (max-width: 420px) {
+      .up-next.show {
+        opacity: 0; } }
 
 .up-next--art {
   width: 75px;
