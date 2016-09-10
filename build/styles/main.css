@@ -759,6 +759,9 @@ form button {
   font-size: 32px;
   text-transform: uppercase; }
 
+.title--long {
+  font-size: 24px; }
+
 .track--user {
   padding: 15px 25px 15px 35px;
   font-family: 'Open Sans';

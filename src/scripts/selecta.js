@@ -278,6 +278,13 @@ function showCurrentTrackDetails() {
 		trackTitle.innerHTML = trackDetails[trackIndex].title;
 		trackUser.innerHTML = trackDetails[trackIndex].user.username;
 	}
+
+	// determine font size for track title
+	if (trackDetails[trackIndex].title.length > 45) {
+		trackTitle.classList.add('title--long');
+	} else {
+		trackTitle.classList.remove('title--long');
+	}
 	
 
 	// display track artwork (grab the bigger size for better quality)

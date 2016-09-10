@@ -153,6 +153,10 @@ form button {
 	text-transform: uppercase;
 }
 
+.title--long {
+	font-size: 24px;
+}
+
 .track--user {
 	@include pad(15px 25px 15px 35px);
 
