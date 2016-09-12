@@ -1,0 +1,26 @@
+/* DJ SELECTION 
+---------------------------*/
+input[type=checkbox]:checked + label {
+	border: 3px solid rgba(211, 131, 18, 1);
+	transform: scale(1.1);
+}
+
+
+/* AUDIO PLAYER
+---------------------------*/
+.track--info, .up-next {
+	&.hide {
+		opacity: 0;
+	}
+	&.show {
+		opacity: 1;
+	}
+}
+
+.up-next {
+	&.show {
+		@include media($mobile) {
+			opacity: 0;
+		}
+	}
+}

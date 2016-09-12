@@ -400,6 +400,12 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526, #414345);
+  background: -webkit-linear-gradient(right, #232526, #414345);
+  background: linear-gradient(to left, #232526, #414345); }
+
 main {
   max-width: 68em;
   margin-left: auto;
@@ -411,6 +417,27 @@ main {
 
 p {
   margin: 0; }
+
+h1 {
+  font-family: "Permanent Marker";
+  color: #fff;
+  font-size: 75px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); }
+  @media screen and (max-width: 515px) {
+    h1 {
+      font-size: 64px; } }
+
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  -webkit-filter: blur(40px);
+  filter: blur(40px);
+  -webkit-transition: opacity 0.75s ease-in, background-image 0.75s ease-in;
+  transition: opacity 0.75s ease-in, background-image 0.75s ease-in; }
+  .background-image.active {
+    opacity: 0.85; }
 
 body {
   height: 100vh;
@@ -600,67 +627,7 @@ input[type=checkbox] {
   display: none; }
 
 label {
-  display: inline-block; }
-
-/* AUDIO PLAYER 
----------------------------*/
-.audio-player {
-  border-radius: 8px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: background-image 1s ease, opacity 0.5s ease;
-  transition: background-image 1s ease, opacity 0.5s ease; }
-  .audio-player.active {
-    opacity: 1;
-    visibility: visible;
-    background-color: rgba(255, 255, 255, 0.3); }
-    @media screen and (max-width: 515px) {
-      .audio-player.active {
-        background-color: transparent; } }
-
-.player-controls {
-  font-size: 75px;
-  text-align: center;
-  color: #222; }
-  .player-controls:hover {
-    cursor: pointer; }
-
-.previous, .next, .play-pause {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease; }
-  .previous:hover, .next:hover, .play-pause:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.65); }
-
-body {
-  background: #232526;
-  background: -webkit-linear-gradient(to left, #232526, #414345);
-  background: -webkit-linear-gradient(right, #232526, #414345);
-  background: linear-gradient(to left, #232526, #414345); }
-
-h1 {
-  font-family: "Permanent Marker";
-  color: #fff;
-  font-size: 75px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); }
-  @media screen and (max-width: 515px) {
-    h1 {
-      font-size: 64px; } }
-
-.background-image {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0;
-  -webkit-filter: blur(40px);
-  filter: blur(40px);
-  -webkit-transition: opacity 0.75s ease-in, background-image 0.75s ease-in;
-  transition: opacity 0.75s ease-in, background-image 0.75s ease-in; }
-  .background-image.active {
-    opacity: 0.85; }
-
-/* DJ SELECTION 
----------------------------*/
-label {
+  display: inline-block;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -683,11 +650,6 @@ label {
 .label--bk {
   background-image: url("../images/bk.jpg");
   margin-right: 0; }
-
-input[type=checkbox]:checked + label {
-  border: 3px solid #d38312;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1); }
 
 .dj--names p {
   font-family: "Oswald";
@@ -737,15 +699,38 @@ form button {
     form button {
       font-size: 28px; } }
 
-/* AUDIO PLAYER
+/* AUDIO PLAYER 
 ---------------------------*/
+.audio-player {
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: background-image 1s ease, opacity 0.5s ease;
+  transition: background-image 1s ease, opacity 0.5s ease; }
+  .audio-player.active {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.3); }
+    @media screen and (max-width: 515px) {
+      .audio-player.active {
+        background-color: transparent; } }
+
+.player-controls {
+  font-size: 75px;
+  text-align: center;
+  color: #222; }
+  .player-controls:hover {
+    cursor: pointer; }
+
+.previous, .next, .play-pause {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .previous:hover, .next:hover, .play-pause:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.65); }
+
 .track--info {
   -webkit-transition: all 1.5s ease-in;
   transition: all 1.5s ease-in; }
-  .track--info.hide {
-    opacity: 0; }
-  .track--info.show {
-    opacity: 1; }
 
 .track--title, .track--user {
   background: rgba(211, 131, 18, 0.82);
@@ -785,13 +770,6 @@ form button {
   opacity: 0;
   -webkit-transition: all 1.5s ease-in;
   transition: all 1.5s ease-in; }
-  .up-next.hide {
-    opacity: 0; }
-  .up-next.show {
-    opacity: 1; }
-    @media screen and (max-width: 515px) {
-      .up-next.show {
-        opacity: 0; } }
 
 .up-next--art {
   width: 75px;
@@ -809,3 +787,22 @@ form button {
 
 .up-next p {
   font-style: italic; }
+
+/* DJ SELECTION 
+---------------------------*/
+input[type=checkbox]:checked + label {
+  border: 3px solid #d38312;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+
+/* AUDIO PLAYER
+---------------------------*/
+.track--info.hide, .up-next.hide {
+  opacity: 0; }
+
+.track--info.show, .up-next.show {
+  opacity: 1; }
+
+@media screen and (max-width: 515px) {
+  .up-next.show {
+    opacity: 0; } }

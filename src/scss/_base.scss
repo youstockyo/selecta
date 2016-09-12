@@ -1,7 +1,38 @@
+body {
+	background: #232526;
+	background: -webkit-linear-gradient(to left, #232526 , #414345);
+	background: linear-gradient(to left, #232526 , #414345);
+}
+
 main {
 	@include outer-container;
 }
 
 p {
 	margin: 0;
+}
+
+h1 {
+	font-family: "Permanent Marker";
+	color: #fff;
+	font-size: 75px;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+
+	@include media($mobile) {
+		font-size: 64px;
+	}
+}
+
+.background-image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0;
+
+	@include filter(blur(40px));
+	@include transition(opacity 0.75s ease-in, background-image 0.75s ease-in);
+
+	&.active {
+		opacity: 0.85;
+	}
 }
