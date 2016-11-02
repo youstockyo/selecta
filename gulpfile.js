@@ -26,7 +26,7 @@ gulp.task('sass', function() {
 
 // compile js files
 gulp.task('js', function() {
-	return gulp.src('src/scripts/**/*.js')
+	return gulp.src('src/scripts/**/app.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('jshint-stylish'))
 	.pipe(gulp.dest('build/scripts/'))
